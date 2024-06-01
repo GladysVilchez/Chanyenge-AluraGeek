@@ -1,0 +1,17 @@
+{
+    "products": [
+        {
+            "name": "lazo Gris",
+            "price": "4,00",
+            "image": "https://www.instagram.com/p/CuX6cQ0OIX6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+            "id": 1
+        },
+        {
+            "name": "Pares de Lazos",
+            "price": "5,00",
+            "image": "https://images.app.goo.gl/Bcacz8pDNtgU89f88",
+            "id": 2
+        }
+
+    ]
+}
