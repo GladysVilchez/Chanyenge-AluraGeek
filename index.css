@@ -22,7 +22,7 @@ header {
     font-size: 16px;
     color: var(--cor-hover);
     display: flex;
-    justify-content:space-between;
+    gap: 15px;
     font-family: var(--fonte-primaria);
     font-size: 10px;
     font-weight: 400px;    
