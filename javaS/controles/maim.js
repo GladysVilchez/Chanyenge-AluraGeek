@@ -5,7 +5,7 @@ const form = document.querySelector("[data-form]")
 
 function createElement(name, price, image, id){
     const crear = document.createElement("div");
-    crear.classList.add("imagen_producto");
+    crear.classList.add("container");
 
     crear.innerHTML = `
     <img src="${image}" alt="" class="imagen_producto">
@@ -36,11 +36,12 @@ const render = async () => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const name = document.querySelector("[date-name]").value;
+    const nome = document.querySelector("[data-nome]").value;
     const price = document.querySelector("[data-price]").value;
     const image = document.querySelector("[data-image]").value;
 
-    servicioProductos.crearProducto(nome, price, image).then((res) => console.log(res)).catch((err) => console.log(err))
+    servicioProductos.crearProducto(nome, price, image)
+    .then((res) => console.log(res)).catch((err) => console.log(err))
     
 })
 

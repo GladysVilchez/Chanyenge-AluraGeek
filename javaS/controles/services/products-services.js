@@ -1,7 +1,8 @@
-const listaProductos = () => {
-    return fetch("http://localhost:3000/products")
-    .then((res) => res.json())
-    .catch((err) => console.log(err))
+async function listaProductos () {
+    const coneccion = await fetch("http://localhost:3000/products")
+    const coneccionConvertida = await coneccion;
+
+    return coneccionConvertida;
 };
 
 const crearProducto = (name, price, image) => {
