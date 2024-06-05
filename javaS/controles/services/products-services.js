@@ -5,20 +5,21 @@ async function listaProductos () {
     return coneccionConvertida;
 };
 
-const crearProducto = (name, price, image) => {
-    return fetch("http://localhost:3000/products", {
+async function crearProducto(name, price, image) {
+    const coneccion = fetch("http://localhost:3000/products", {
         method: "POST",
         headers: {
-            "contenr-type": "aplication/json",
+            "content-type": "aplication/json",
         },
         body: JSON.stringify({
-            name,
-            price,
-            image,
+            name: name,
+            price: price,
+            image: image,
         })
     })
-    .then((res) => res.json())
-    .catch((err) => console.log(err))
+
+    const coneccionConvertida = coneccion.json();
+    return coneccionConvertida;
 }
 
 

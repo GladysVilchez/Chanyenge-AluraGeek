@@ -130,9 +130,8 @@ main {
     padding: 0px, 0px, 10px, 0px;
     width: 400px;
     overflow: scroll;
-    
 }
-.container_producto {
+ .container_producto {
     background-color: var(--cor-terciaria);
     width: 160px;
     height: 250px;
@@ -147,7 +146,7 @@ main {
     font-size: 18px;
     font-weight: 400;
     gap: 0px;
-}
+} 
 
 .container_valor {
     display: flex;

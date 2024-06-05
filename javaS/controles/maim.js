@@ -1,14 +1,13 @@
 import { servicioProductos } from "./services/products-services.js";
 
-const productoContainer = document.querySelector("[data-product]")
-const form = document.querySelector("[data-form]")
+const productos = document.querySelector("[data-product]");
 
-function createElement(name, price, image, id){
-    const crear = document.createElement("div");
-    crear.classList.add("container");
-
-    crear.innerHTML = `
-    <img src="${image}" alt="" class="imagen_producto">
+function constroiCard(name, price, image) {
+    const imagem = document.createElement("div");
+    image.className = "container";
+    image.innerHTML = `
+    <div data-product class="container">
+        <img src="${image}" alt="" class="imagen_producto">
                     <p class="Descripcion">${name}</p>
                     <div class="container_valor">
                         <h3 class="valor">${price}</h2>
@@ -16,43 +15,23 @@ function createElement(name, price, image, id){
 <img src="img/borrar.png" alt="papelera" class="papelera">
     `
 
-    productoContainer.appendChild(crear);
-    return crear;
+    return imagem;
 }
 
-const render = async () => {
+async function listaProducto() {
     try {
-        const productosLista = await servicioProductos.listaProductos();
-        productosLista.forEach(producto => {
-            productoContainer.appendChild(
-                createElement(producto.name, producto.price, producto.image, producto.id))
+        const lista = await servicioProductos.listaProductos();
+        lista.forEach(producto => {
+            const {name, price, image} = producto;
+            const productos = constroiCard(name, price, image, id);
+            productos.appenChild(productos)
         });
-    }catch (error) {
-        console.log(error);
-
+    } catch (error) {
+        console.log('Erro ao obter a lista de produtos:', error);
     }
 }
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nome = document.querySelector("[data-nome]").value;
-    const price = document.querySelector("[data-price]").value;
-    const image = document.querySelector("[data-image]").value;
-
-    servicioProductos.crearProducto(nome, price, image)
-    .then((res) => console.log(res)).catch((err) => console.log(err))
-    
-})
-
-render()
-
-
-
-
-
-
-
+listaProducto();
 
 
 
