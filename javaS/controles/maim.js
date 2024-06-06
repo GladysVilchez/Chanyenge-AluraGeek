@@ -1,8 +1,8 @@
 import { servicioProductos } from "./services/products-services.js";
 
-const productos = document.querySelector("[data-product]");
+const productoContainer = document.querySelector("[data-product]");
 
-function constroiCard(name, price, image) {
+function constroiCard(name, price, image, id) {
     const imagem = document.createElement("div");
     image.className = "container";
     image.innerHTML = `
@@ -15,6 +15,7 @@ function constroiCard(name, price, image) {
 <img src="img/borrar.png" alt="papelera" class="papelera">
     `
 
+    productoContainer.appendChild(imagem)
     return imagem;
 }
 
@@ -22,12 +23,12 @@ async function listaProducto() {
     try {
         const lista = await servicioProductos.listaProductos();
         lista.forEach(producto => {
-            const {name, price, image} = producto;
+            const {name, price, image, id} = producto;
             const productos = constroiCard(name, price, image, id);
             productos.appenChild(productos)
         });
     } catch (error) {
-        console.log('Erro ao obter a lista de produtos:', error);
+        console.log(error);
     }
 }
 
