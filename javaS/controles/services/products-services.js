@@ -18,6 +18,7 @@ async function crearProducto(name, price, image) {
         })
     })
 
+
     const coneccionConvertida = await coneccion.json();
     return coneccionConvertida;
 }
@@ -25,10 +26,10 @@ async function crearProducto(name, price, image) {
 async function eliminarProducto(productoId) {
     try {
         const response = await fetch(`http://localhost:3000/products/${productoId}`, {
-            method: 'BORRAR'
+            method: 'DELETE'
         })
         if (!response.ok) {
-            throw new Error (`Error al eliminar el produto: ${response.status}`);
+            throw new error (`Error al eliminar el produto: ${response.status}`);
         }
         return response.json();
     } catch (error) {

@@ -7,13 +7,16 @@
       "id": 1
     },
     {
-      "name": "Pares de Lazos",
+      "name": "lazo Rojo",
       "price": "5,00",
-      "image": "https://images.app.goo.gl/Bcacz8pDNtgU89f88",
+      "image": "https://w7.pngwing.com/pngs/579/282/png-transparent-red-lazos-thumbnail.pngx",
       "id": 2
     },
     {
       "id": 3
+    },
+    {
+      "id": 4
     }
   ]
 }
