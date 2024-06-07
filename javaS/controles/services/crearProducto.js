@@ -1,4 +1,5 @@
-import { servicioProductos } from "./controles/services/products-services.js";
+import { servicioProductos } from "./products-services.js";
+
 const formulario = document.querySelector("[data-formulario]");
 
 async function agregarProducto(evento) {
@@ -11,9 +12,9 @@ async function agregarProducto(evento) {
         await servicioProductos.crearProducto(name, price, image);
         alert('Video enviado con suceso')
     } catch (erro) {
-        alert('Erro ao enviaar o vídeo. Tente novamente.')
+        alert('Erro ao enviaar o vÃdeo. Tente novamente.')
     }
    
-   }
+}
 
-await formulario.addEventListener("submit", evento => agregarProducto(evento));
+formulario.addEventListener("submit", evento => agregarProducto(evento));
